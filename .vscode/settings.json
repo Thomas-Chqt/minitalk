@@ -1,0 +1,10 @@
+{
+	"C_Cpp.default.includePath": [
+		"_client/includes",
+		"_server/includes"
+	],
+	"files.exclude": {
+		"client*": true,
+		"server*": true
+	}
+}
