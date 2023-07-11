@@ -1,5 +1,7 @@
 *.a
 *.o
 .DS_Store
-client*
-server*
+client
+client_debug
+server
+server_debug
