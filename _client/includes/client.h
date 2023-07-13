@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:25 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/12 16:15:51 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:35:34 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@
 
 typedef unsigned int	t_useconds;
 
-
-void	free(void *);
+void	free(void *ptr);
 int		usleep(t_useconds microseconds);
 
-void	send_byte(t_uint8 byte, pid_t server_pid);
+void	send_str(pid_t server_pid, const char *str);
 
 #endif // CLIENT_H

@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:07 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/12 16:25:07 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:35:10 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,13 @@ static void	destructor(void)
 
 int main()
 {
-	struct sigaction	sa_usr1;
-	struct sigaction	sa_usr2;
+	struct sigaction	sa;
 
-	sa_usr1.__sigaction_u.__sa_sigaction = &signal_handler;
-	sa_usr2.__sigaction_u.__sa_sigaction = &signal_handler;
-	sigaction(SIGUSR1, &sa_usr1, NULL);
-	sigaction(SIGUSR2, &sa_usr2, NULL);
-	signal(SIGINT, &sigint_handler);
-	print_pid();
+	sa.__sigaction_u.__sa_sigaction = &signal_handler;
+	sa.sa_flags = 0;
+	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
+	ft_printf("Server PID : %d\n", getpid());
 	while (1)
 		pause();
 }

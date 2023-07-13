@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:25 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/12 15:39:06 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:34:58 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@
 pid_t	getpid(void);
 int		pause(void);
 
-void	print_pid(void);
 void	signal_handler(int sig, siginfo_t *info, void *ucontext);
-void	sigint_handler(int sig);
 
 #endif // SERVER_H

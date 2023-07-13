@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:07 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/12 16:30:43 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:31:08 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,8 @@ static void	destructor(void)
 
 int	main(int argc, char const *argv[])
 {
-	pid_t	server_pid;
-
-	if (argc < 2)
+	if (argc < 3)
 		return (-1);
-	server_pid = (pid_t)ft_atoi(argv[1]);
-	send_byte(0xAA, server_pid);
+	send_str((pid_t)ft_atoi(argv[1]), argv[2]);
 	return (0);
 }
