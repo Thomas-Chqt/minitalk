@@ -6,13 +6,13 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:35 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/13 17:35:02 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:10:36 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
 
-void	signal_handler(int sig, siginfo_t *info, void *ucontext)
+void	signal_handler(int sig)
 {
 	static t_uint8	byte = 0;
 	static t_uint8	i;
