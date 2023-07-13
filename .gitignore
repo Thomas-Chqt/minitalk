@@ -5,3 +5,4 @@ client
 client_debug
 server
 server_debug
+Libft/libft.*

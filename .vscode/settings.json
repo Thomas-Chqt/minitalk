@@ -1,10 +1,14 @@
 {
 	"C_Cpp.default.includePath": [
 		"_client/includes",
-		"_server/includes"
+		"_server/includes",
+		"Libft/includes"
 	],
 	"files.exclude": {
 		"client*": true,
-		"server*": true
-	}
+		"server*": true,
+		"Libft/libft.a": true,
+		"Libft/libft.h": true,
+
+	},
 }
