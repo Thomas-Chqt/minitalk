@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:35 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/11 21:50:43 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/13 03:07:04 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,23 @@ void	print_pid(void)
 	ft_printf("PID : %d\n", getpid());
 }
 
-void	sigusr_catcher(int sig_num)
+void	signal_handler(int sig, siginfo_t *info, void *ucontext)
 {
-	static int	sigusr1_count = 0;
-	static int	sigusr2_count = 0;
+	static t_uint8	byte = 0;
+	static t_uint8	i;
 
-	signal(SIGUSR1, &sigusr_catcher);
-	signal(SIGUSR2, &sigusr_catcher);
-	if (sig_num == SIGUSR1)
-		ft_printf("SIGUSR1 recived ! (%d)\n", sigusr1_count++);
-	if (sig_num == SIGUSR2)
-		ft_printf("SIGUSR2 recived ! (%d)\n", sigusr2_count++);
+	if (sig == SIGUSR1)
+		byte = (byte | (1 << i++));
+	if (sig == SIGUSR2)
+		i++;
+	if (i < 8)
+		return ;
+	ft_printf("%X\n", byte);
+	i = 0;
+	byte = 0;
+}
+
+void	sigint_handler(int sig)
+{
+	exit(0);
 }

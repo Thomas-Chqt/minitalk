@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:07 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/11 22:01:09 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/12 16:30:43 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	destructor(void)
 	print_report();
 	pid = ft_itoa(getpid());
 	cmd = ft_strjoin("leaks -q ", pid);
-	system((const char *)cmd);
+	// system((const char *)cmd);
 	free(pid);
 	free(cmd);
 }
@@ -34,19 +34,11 @@ static void	destructor(void)
 
 int	main(int argc, char const *argv[])
 {
-	t_pid		pid;
+	pid_t	server_pid;
 
 	if (argc < 2)
 		return (-1);
-	pid = (t_pid)ft_atoi(argv[1]);
-	for (size_t i = 0; i < 2; i++)
-	{
-		if (i % 2 == 0)
-			send_signal(pid, SIGUSR1);
-		else
-			send_signal(pid, SIGUSR2);		
-		usleep(100);
-	}
-	send_signal(pid, SIGKILL);
+	server_pid = (pid_t)ft_atoi(argv[1]);
+	send_byte(0xAA, server_pid);
 	return (0);
 }
