@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 12:20:36 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/11 20:52:49 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/18 17:00:44 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@
 # include <stdarg.h>
 
 # include "libft.h"
-
 
 #endif // LIBFT_INTERNAL_H

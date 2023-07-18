@@ -6,12 +6,12 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:52:02 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/11 20:53:04 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/18 17:00:35 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_INTERNAL
-# define FT_PRINTF_INTERNAL
+#ifndef FT_PRINTF_INTERNAL_H
+# define FT_PRINTF_INTERNAL_H
 
 # include "libft_internal.h"
 
@@ -108,6 +108,5 @@ int				put_upx(t_conv_specs conv_specs, t_arg_list *args);
 int				put_per(t_conv_specs conv_specs, t_arg_list *args);
 int				print_converted(const char *str, size_t *i, t_arg_list *args,
 					size_t *print_count);
-
 
 #endif // FT_PRINTF_INTERNAL
