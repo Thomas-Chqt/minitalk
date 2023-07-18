@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:35 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/13 18:10:36 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/18 16:25:30 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,11 @@ void	signal_handler(int sig)
 	ft_putchar_fd(byte, 1);
 	i = 0;
 	byte = 0;
+}
+
+void	exit_handler(int sig)
+{
+	if (sig)
+		sig = 0;
+	exit(0);
 }
