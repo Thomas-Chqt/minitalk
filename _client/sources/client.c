@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:35 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/13 17:35:31 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/18 16:25:04 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ void	send_str(pid_t server_pid, const char *str)
 		}
 		s_i++;
 	}
-	
 }

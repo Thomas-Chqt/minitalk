@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:30:07 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/07/13 17:31:08 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/07/18 16:25:12 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	destructor(void)
 	print_report();
 	pid = ft_itoa(getpid());
 	cmd = ft_strjoin("leaks -q ", pid);
-	// system((const char *)cmd);
+	system((const char *)cmd);
 	free(pid);
 	free(cmd);
 }
