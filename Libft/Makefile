@@ -6,7 +6,7 @@
 #    By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:24:59 by tchoquet          #+#    #+#              #
-#    Updated: 2023/07/13 18:41:18 by tchoquet         ###   ########.fr        #
+#    Updated: 2023/07/18 16:36:55 by tchoquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,8 @@ ${NAME}: ${OBJ}
 	@echo "Archive created at $@."
 
 clean:
-	@rm -rf ${OBJ}
-	@echo "Object files in ${BUILD_DIR} deleted."
+	@rm -rf ${BUILD_DIR}
+	@echo "${BUILD_DIR} folder deleted. (Libft)"
 
 fclean:
 	@rm -rf ${NAME}

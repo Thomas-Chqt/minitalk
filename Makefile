@@ -6,7 +6,7 @@
 #    By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/11 17:54:51 by tchoquet          #+#    #+#              #
-#    Updated: 2023/07/13 18:41:54 by tchoquet         ###   ########.fr        #
+#    Updated: 2023/07/18 16:36:16 by tchoquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,9 +54,9 @@ ${SERVER_NAME}: ${LIBS} ${SERVER_OBJ}
 	@echo "Executable created at : $@."
 
 clean:
-	make -C ${LIBFT_DIR} clean
-	@rm -rf ${CLIENT_OBJ} ${SERVER_OBJ}
-	@echo "Release object files deleted in ${CLIENT_BUILD_DIR} and ${SERVER_BUILD_DIR} folders."
+	@make -C ${LIBFT_DIR} clean
+	@rm -rf ${CLIENT_BUILD_DIR} ${SERVER_BUILD_DIR}
+	@echo "${CLIENT_BUILD_DIR} and ${SERVER_BUILD_DIR} folders deleted."
 
 fclean: clean
 	make -C ${LIBFT_DIR} fclean
@@ -73,7 +73,7 @@ ${SERVER_BUILD_DIR}/%_debug.o ${SERVER_BUILD_DIR}/%.o: ${SERVER_SRCS_DIR}/%.c | 
 	${CC} ${CFLAGS} -o $@ -c $< -I${SERVER_INCLUDES_DIR}
 
 ${LIBFT}:
-	make -C ${LIBFT_DIR} all
+	@make -C ${LIBFT_DIR} all
 
 
 #folders
